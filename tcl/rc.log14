@@ -1,0 +1,1330 @@
+Checking out license 'RTL_Compiler_Ultra'... (0 seconds elapsed)
+Reading GUI preferences file '/home/buet/.cadence/rc.gui'.
+Finished loading tool scripts (7 seconds elapsed)
+
+                                Cadence Encounter(R) RTL Compiler
+                        Version v12.10-s012_1 (32-bit), built Jan 26 2013
+
+
+Copyright notice: Copyright 1997-2012 Cadence Design Systems, Inc. All rights reserved 
+worldwide. 
+
+WARNING: This version of RC is 4628 days old.
+         Visit downloads.cadence.com for the latest release of RC.
+
+
+=================================================================================================
+                          Welcome to Cadence Encounter(R) RTL Compiler
+
+Notice: Upcoming end of support for Linux 32-bit.
+Support for Linux 32-bit will be discontinued starting with the RC 13.1 release.
+To ensure continued access to the forthcoming releases, RC 13.1 and up, you are
+advised to start the transitioning to Linux 64-bit.
+
+Here is a quick introduction on how to access our product information.  
+If you do not want this message to appear in the future, create an 
+initialization file (an empty file will do) in your home directory 
+called '~/.cadence/.synth_init'.
+
+  To access the product documentation in HTML and PDF, type 'cdnshelp'
+    at the system prompt. 
+  For a list of available commands, type 'help'. 
+  To view a man page for a command, type 'man <commandName>'.
+  To view a man page for an error message, type 'man <messageID>'.
+  For a list of all possible object types, type 'get_attribute -help'.
+  For a list of all available attributes by object type, type
+    'get_attribute * <object_type> -help'.
+  For a list of all attributes for every object type, type
+    'get_attribute * * -help'
+  To list only writable attributes, substitute 'get_attribute' with
+    'set_attribute'.
+  To get a template script to run RTL Compiler, use the 'write_template'
+    command.
+  To get a template script to run Conformal based on the current RTL
+    Compiler session, use the 'write_do_lec' command.
+  
+  Obsolete attributes in the current tool version.
+  To learn more, type 'get_attribute -help <attribute> <object>'.
+
+            object  attribute
+            ------  ---------
+       cpf_command  synthesize_complex_expressions
+    cpf_command_id  current_set_instance_macro
+    cpf_command_id  current_set_instance_module
+    cpf_command_id  done_in_apply_cpf
+    cpf_command_id  done_in_write_cpf
+    cpf_command_id  macro_definition_command
+    cpf_command_id  rc_command
+            design  dp_perform_rewriting_operations
+            design  lp_map_to_srpg_cells
+            design  lp_optimize_dynamic_power_first
+            design  lp_srpg_pg_driver
+            design  ovf_current_verification_directory
+          instance  black_box
+          instance  dft_inherited_dont_scan
+          instance  lp_map_to_srpg_cells
+          instance  lp_map_to_srpg_type
+          instance  lp_srpg_pg_driver
+           libcell  black_box
+           libcell  location
+               net  logic0_driven
+               net  logic1_driven
+              root  auto_ungroup_min_effort
+              root  degenerate_complex_seqs
+              root  disable_power_mode
+              root  dp_area_mode
+              root  dp_perform_csa_operations
+              root  dp_perform_rewriting_operations
+              root  dp_perform_sharing_operations
+              root  dp_perform_speculation_operations
+              root  enable_parallel_iopt
+              root  exact_match_seqs_async_controls
+              root  hdl_flatten_array
+              root  hdl_old_reg_naming
+              root  hdl_reg_naming_style_scalar
+              root  hdl_reg_naming_style_vector
+              root  hdl_trim_target_index
+              root  ignore_unknown_embedded_commands
+              root  lbr_async_clr_pre_seqs_interchangable
+              root  ovf_mode
+              root  ovf_verification_directory
+              root  ple_parameter_source_priority
+              root  pqos_virtual_buffer
+              root  retime_preserve_state_points
+              root  wlec_env_var
+              root  wlec_flat_r2n
+              root  wlec_no_exit
+              root  wlec_old_lp_ec_flow
+              root  wlec_save_ssion
+              root  wlec_sim_lib
+              root  wlec_sim_plus_lib
+              root  wlec_skip_iso_check_hier_compare
+              root  wlec_skip_lvl_check_hier_compare
+              root  wlec_verbose
+         subdesign  allow_csa_subdesign
+         subdesign  allow_sharing_subdesign
+         subdesign  allow_speculation_subdesign
+         subdesign  auto_ungroup_ok
+         subdesign  dp_perform_rewriting_operations
+
+Send us feedback at rc_feedback@cadence.com.
+=================================================================================================
+
+Sourcing './Ci9_new.tcl' (Sun Sep 28 19:27:18 +0600 2025)...
+==============================================================================
+Ci9 CPU Synthesis - Clean Version
+==============================================================================
+Reading RTL design...
+Successfully read RTL design
+Setting standard cell library...
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.100000, 25.000000) in library '../library/stdcells.lib'.
+        : The nominal operating condition represents either the nominal PVT values if specified in the library source, or the default PVT values (1.0, 1.0, 1.0).
+
+  Message Summary for Library ../library/stdcells.lib:
+  ****************************************************
+  An unsupported construct was detected in this library. [LBR-40]: 2
+  Found 'statetable' group in cell. [LBR-83]: 8
+  Created nominal operating condition. [LBR-412]: 1
+ 
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: '../library/stdcells.lib', Total cells: 135, Usable cells: 116, Cells unusable for mapping: 19.
+	List of unusable cells: 'ANTENNA_X1 CLKGATETST_X1 CLKGATETST_X2 CLKGATETST_X4 CLKGATETST_X8 CLKGATE_X1 CLKGATE_X2 CLKGATE_X4 CLKGATE_X8 WELLTAP_X1 ... and others.'
+        : The number of unusable cells that is listed depends on the setting of the 'information_level' root attribute. If set to a value less than 6, the list is limited to 10 unusable cells. If set to a value equal to or higher than 6, all unusable cells are listed.
+  Setting attribute of root '/': 'library' = ../library/stdcells.lib
+Successfully set library
+Elaborating design...
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: '../library/stdcells.lib', Total cells: 135, Usable cells: 116, Cells unusable for mapping: 19.
+	List of unusable cells: 'ANTENNA_X1 CLKGATETST_X1 CLKGATETST_X2 CLKGATETST_X4 CLKGATETST_X8 CLKGATE_X1 CLKGATE_X2 CLKGATE_X4 CLKGATE_X8 WELLTAP_X1 ... and others.'
+Warning : Non-monotonic wireload model found. [LBR-81]
+        : 'Length' table in wireload model '3K_hvratio_1_2' is non-monotonic.
+        : Non-monotonic wireload models can cause problems during synthesis and/or mapping.  Raising some of the points in the curve to give it a monotonic shape.
+Warning : Non-monotonic wireload model found. [LBR-81]
+        : 'Length' table in wireload model '3K_hvratio_1_2' is non-monotonic.
+Warning : Non-monotonic wireload model found. [LBR-81]
+        : 'Length' table in wireload model '3K_hvratio_1_2' is non-monotonic.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'Ci9' from file '../rtl/Ci9.v'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'Ci9' with default parameters value.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused latch register 'jump_taken' in module 'Ci9' in file '../rtl/Ci9.v' on line 339.
+        : A flip-flop or latch that was inferred for an unused signal or variable was removed. Use 'set_attribute hdl_preserve_unused_registers true /' to preserve the flip-flop or latch.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'pc_mem' in module 'Ci9' in file '../rtl/Ci9.v' on line 512.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'pc_wb' in module 'Ci9' in file '../rtl/Ci9.v' on line 547.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'alu_result_wb' in module 'Ci9' in file '../rtl/Ci9.v' on line 547.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[255]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[254]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[253]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[252]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[251]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[250]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[249]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[248]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[247]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[246]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[245]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[244]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[243]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[242]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[241]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[240]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[239]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[238]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[237]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[236]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[235]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[234]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[233]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[232]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[231]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[230]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[229]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[228]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[227]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[226]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[225]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[224]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[223]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[222]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[221]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[220]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[219]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[218]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[217]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[216]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[215]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[214]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[213]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[212]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[211]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[210]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[209]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[208]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[207]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[206]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[205]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[204]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[203]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[202]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[201]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[200]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[199]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[198]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[197]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[196]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[195]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[194]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[193]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[192]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[191]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[190]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[189]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[188]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[187]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[186]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[185]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[184]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[183]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[182]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[181]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[180]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[179]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[178]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[177]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[176]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[175]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[174]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[173]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[172]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[171]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[170]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[169]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[168]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[167]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[166]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[165]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[164]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[163]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[162]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[161]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[160]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[159]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[158]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[157]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[156]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[155]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[154]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[153]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[152]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[151]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[150]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[149]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[148]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[147]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[146]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[145]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[144]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[143]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[142]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[141]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[140]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[139]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[138]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[137]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[136]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[135]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[134]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[133]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[132]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[131]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[130]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[129]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[128]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[127]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[126]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[125]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[124]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[123]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[122]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[121]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[120]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[119]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[118]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[117]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[116]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[115]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[114]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[113]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[112]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[111]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[110]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[109]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[108]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[107]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[106]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[105]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[104]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[103]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[102]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[101]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[100]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[99]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[98]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[97]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[96]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[95]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[94]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[93]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[92]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[91]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[90]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[89]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[88]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[87]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[86]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[85]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[84]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[83]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[82]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[81]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[80]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[79]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[78]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[77]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[76]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[75]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[74]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[73]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[72]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[71]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[70]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[69]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[68]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[67]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[66]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[65]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[64]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[63]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[62]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[61]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[60]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[59]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[58]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[57]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[56]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[55]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[54]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[53]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[52]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[51]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[50]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[49]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[48]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[47]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[46]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[45]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[44]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[43]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[42]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[41]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[40]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[39]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[38]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[37]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[36]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[35]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[34]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[33]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[32]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[31]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[30]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[29]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[28]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[27]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[26]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[25]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[24]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[23]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[22]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[21]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[20]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[19]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[18]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[17]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[16]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[15]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[14]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[13]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[12]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[11]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[10]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[9]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[8]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[7]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[6]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[5]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[4]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[3]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[2]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[1]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'branch_target_buffer[0]' in module 'Ci9' in file '../rtl/Ci9.v' on line 614.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'exception_vector' in module 'Ci9' in file '../rtl/Ci9.v' on line 697.
+Warning : Signal or variable has multiple drivers. [CDFG2G-622]
+        : 'bht_index' in module 'Ci9' in file '../rtl/Ci9.v' on line 627, column 17.
+        : This may cause simulation mismatches between the original and synthesized designs.
+Warning : Signal or variable has multiple drivers. [CDFG2G-622]
+        : 'prediction' in module 'Ci9' in file '../rtl/Ci9.v' on line 648, column 62.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'Ci9'.
+Successfully elaborated design
+Synthesizing to generic...
+Info    : Deleting instances not driving any primary outputs. [GLO-32]
+        : Deleting 69 hierarchical instances.
+        : Optimizations such as constant propagation or redundancy removal could change the connections so an instance does not drive any primary outputs anymore. To see the list of deleted instances, set the 'information_level' attribute to 2 or above.
+        Trying carrysave optimization (configuration 1 of 1) on module 'Ci9'...
+Info    : Done carrysave optimization. [RTLOPT-20]
+        : There are 6 CSA groups in module 'Ci9'... Accepted.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[0]'.
+        : This optimization was enabled by the root attribute 'optimize_constant_latches'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[1]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[2]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[3]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[4]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[5]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[6]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'bht_index_reg[7]'.
+Info    : Replacing a latch with a logic constant 0. [GLO-14]
+        : The instance is 'prediction_reg'.
+Info    : Deleting instances not driving any primary outputs. [GLO-32]
+        : Deleting 33 sequential instances.
+Info    : Deleting instances not driving any primary outputs. [GLO-32]
+        : Deleting 64 sequential instances.
+  Synthesis succeeded.
+Successfully completed generic synthesis
+Synthesizing to mapped...
+Mapping Ci9 to gates.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'power_state_reg[0]'.
+        : This optimization was enabled by the root attribute 'optimize_constant_0_flops'.
+Info    : Deleting instances not driving any primary outputs. [GLO-32]
+        : Deleting 1 sequential instance.
+ 
+Global mapping target info
+==========================
+Cost Group 'default' target slack: Unconstrained
+
+ 
+Global mapping status
+=====================
+                                    Worst 
+                           Total  Weighted
+Operation                   Area  Neg Slk Worst Path
+-------------------------------------------------------------------------------
+ global_map               143177        0  N/A
+ 
+Global incremental target info
+==============================
+Cost Group 'default' target slack: Unconstrained
+
+ 
+Global incremental optimization status
+======================================
+                                    Worst 
+                           Total  Weighted
+Operation                   Area  Neg Slk Worst Path
+-------------------------------------------------------------------------------
+ global_incr              142009        0  N/A
+Info    : 'Conformal LEC12.1-p100' or later builds is recommended for verification. [WDO-600]
+        : The use of 'Conformal LEC12.1-p100' or later builds is recommended to get better verification results.
+Generating a dofile for design 'Ci9' in file 'fv/Ci9/rtl_to_g1.do' ...
+Info    : 'Conformal LEC12.1-p100' or later builds is recommended for verification. [WDO-600]
+Generating a dofile for design 'Ci9' in file 'fv/Ci9/rtl_to_g1_withoutovf.do' ...
+ 
+Incremental optimization status
+===============================
+                                    Worst - - DRC Totals - -
+                           Total  Weighted    Max       Max 
+Operation                   Area  Neg Slk    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_iopt                142009        0         0        0
+ 
+Incremental optimization status
+===============================
+                                    Worst - - DRC Totals - -
+                           Total  Weighted    Max       Max 
+Operation                   Area  Neg Slk    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_delay               142009        0         0        0
+ init_drc                 142009        0         0        0
+ init_area                142009        0         0        0
+ rem_inv                  142004        0         0        0
+ merge_bi                 142003        0         0        0
+ rem_inv_qb               141806        0         0        0
+ gate_comp                141543        0         0        0
+ glob_area                141542        0         0        0
+ area_down                141542        0         0        0
+ 
+Incremental optimization status
+===============================
+                                    Worst - - DRC Totals - -
+                           Total  Weighted    Max       Max 
+Operation                   Area  Neg Slk    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_delay               141542        0         0        0
+ init_drc                 141542        0         0        0
+ init_area                141542        0         0        0
+ gate_comp                141485        0         0        0
+
+  Done mapping Ci9
+  Synthesis succeeded.
+Successfully completed technology mapping
+Writing output files...
+Successfully wrote netlist
+Warning : Default value for an option has changed in this release. [WSDF-104]
+        : Default value for -setuphold has changed from split to merge_always. Specify '-setuphold split' to preserve the behavior of the previous release.
+        : Specify the option explicitly.
+Warning : Default value for an option has changed in this release. [WSDF-104]
+        : Default value for -recrem has changed from split to merge_always. Specify '-recrem split' to preserve the behavior of the previous release.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46337.
+        : Cell could be a loop breaker or its inputs could be driven by constants.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46380.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46383.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46389.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46390.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46395.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46396.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g46397.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167447.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167448.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167449.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167450.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167451.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167452.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167453.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167454.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167455.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167456.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167457.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167458.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167459.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167460.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167461.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167462.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167463.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167464.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167465.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167466.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167467.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167468.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167469.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167470.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167471.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167472.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167473.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167474.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167475.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167476.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167479.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167480.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167483.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167484.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167485.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167486.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167487.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167488.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167490.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167491.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167492.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167493.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167507.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167508.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167509.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167510.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167511.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167512.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167513.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167514.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167515.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167516.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167518.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167520.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167521.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167522.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167523.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167524.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167525.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167526.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167527.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167528.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167530.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167531.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167533.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167534.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167535.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167536.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167537.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167538.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167540.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167542.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167544.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167545.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167546.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167547.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167548.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167549.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167550.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167551.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167552.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167553.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167554.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167555.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167556.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167557.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167559.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167560.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167561.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167562.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167564.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167565.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167569.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167570.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167573.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167574.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167575.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167577.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167579.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167580.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167581.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167582.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167583.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167584.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167585.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167587.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167588.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167589.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167590.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167591.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167592.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167593.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167594.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167595.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167596.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167597.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167598.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167599.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167600.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167601.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167602.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167603.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167604.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167605.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167606.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167607.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167608.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167609.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167610.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167611.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167612.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167613.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167614.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167615.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167616.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167617.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167618.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167619.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167620.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167621.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167622.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167623.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167624.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167625.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167626.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167627.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167628.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167629.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167630.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167631.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167632.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167633.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167634.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167635.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167636.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167637.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167638.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167639.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167640.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167641.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167642.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167643.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167644.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167645.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167646.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167647.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167648.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167649.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167650.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167651.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167652.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167653.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167654.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167655.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167656.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167657.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167658.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167659.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167660.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167661.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167662.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167663.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167664.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167665.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167666.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167667.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167668.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167669.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167670.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167671.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167672.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167673.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167674.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167675.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167676.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167677.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167678.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167679.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167680.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167681.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167682.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167683.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167684.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167685.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167686.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167688.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167690.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167691.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167692.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167693.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167694.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167696.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167698.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167699.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167700.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167701.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167702.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167704.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167705.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167706.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167707.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167708.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167710.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167712.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167714.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167751.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167753.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167758.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167759.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167760.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167761.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167762.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167763.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167764.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g167799.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g173983.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g173985.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174000.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174001.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174007.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174009.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174010.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174013.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174015.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174028.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174643.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174688.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174694.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174704.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174706.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174710.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174715.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174716.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g174719.
+Warning : No delay description exists for cell. [WSDF-201]
+        : Cell g175024.
+Successfully wrote SDF
+==============================================================================
+Ci9 CPU synthesis completed successfully!
+==============================================================================
+GUI is already visible.
+rc:/> Normal exit.

@@ -1,0 +1,286 @@
+#Copyright notice: Copyright 1997-2010 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+
+ovf_setup -ungroup_separator { _ }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 0 } \
+-input { 64 pc_if } \
+-output { 64 N5888 } \
+-output { 64 N5887 } \
+-from { \
+   { 64 add_284_55 : UADD { { pc_if } { 'b0000000000000000000000000000000000000000000000000000000000000100 } } } \
+   { 64 add_286_24 : UADD { { pc_if } { 'b0000000000000000000000000000000000000000000000000000000000000100 } } } \
+   { N5888 = { add_284_55.1 } } \
+   { N5887 = { add_286_24.1 } } } \
+-to { \
+   { 64 add_284_55 : UADD { { pc_if } { 'b0000000000000000000000000000000000000000000000000000000000000100 } } } \
+   { N5888 = { add_284_55.1 } } \
+   { N5887 = { add_284_55.1 } } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 1 } \
+-input { 6 stgrp_9__N5810 } \
+-input { 64 rs1_data_ex } \
+-output { 64 stgrp_9__N5859 } \
+-output { 64 stgrp_9__N5862 } \
+-from { \
+   { 64 srl_484_37 : USRL { { rs1_data_ex } { stgrp_9__N5810 ZERO 64 } } } \
+   { 64 srl_485_37 : USRL { { rs1_data_ex } { stgrp_9__N5810 ZERO 64 } } } \
+   { stgrp_9__N5859 = { srl_484_37.1 } } \
+   { stgrp_9__N5862 = { srl_485_37.1 } } } \
+-to { \
+   { 64 srl_484_37 : USRL { { rs1_data_ex } { stgrp_9__N5810 ZERO 64 } } } \
+   { stgrp_9__N5859 = { srl_484_37.1 } } \
+   { stgrp_9__N5862 = { srl_484_37.1 } } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[7] P } { rd_id_reg[0] P } } \
+-to { { inst_id_reg[7] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[8] P } { rd_id_reg[1] P } } \
+-to { { inst_id_reg[8] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[9] P } { rd_id_reg[2] P } } \
+-to { { inst_id_reg[9] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[10] P } { rd_id_reg[3] P } } \
+-to { { inst_id_reg[10] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[11] P } { rd_id_reg[4] P } } \
+-to { { inst_id_reg[11] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[15] P } { rs1_id_reg[0] P } } \
+-to { { inst_id_reg[15] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[16] P } { rs1_id_reg[1] P } } \
+-to { { inst_id_reg[16] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[17] P } { rs1_id_reg[2] P } } \
+-to { { inst_id_reg[17] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[18] P } { rs1_id_reg[3] P } } \
+-to { { inst_id_reg[18] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[19] P } { rs1_id_reg[4] P } } \
+-to { { inst_id_reg[19] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[20] P } { rs2_id_reg[0] P } } \
+-to { { inst_id_reg[20] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[21] P } { rs2_id_reg[1] P } } \
+-to { { inst_id_reg[21] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[22] P } { rs2_id_reg[2] P } } \
+-to { { inst_id_reg[22] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[23] P } { rs2_id_reg[3] P } } \
+-to { { inst_id_reg[23] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_id_reg[24] P } { rs2_id_reg[4] P } } \
+-to { { inst_id_reg[24] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { exception_cause_reg[0] P } { exception_cause_reg[1] P } { exception_cause_reg[2] P } } \
+-to { { exception_cause_reg[0] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { power_state_reg[0] P } { power_state_reg[2] P } } \
+-to { { power_state_reg[0] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_ex_reg[7] P } { rd_ex_reg[0] P } } \
+-to { { inst_ex_reg[7] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_ex_reg[8] P } { rd_ex_reg[1] P } } \
+-to { { inst_ex_reg[8] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_ex_reg[9] P } { rd_ex_reg[2] P } } \
+-to { { inst_ex_reg[9] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_ex_reg[10] P } { rd_ex_reg[3] P } } \
+-to { { inst_ex_reg[10] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_ex_reg[11] P } { rd_ex_reg[4] P } } \
+-to { { inst_ex_reg[11] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_mem_reg[7] P } { rd_mem_reg[0] P } } \
+-to { { inst_mem_reg[7] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_mem_reg[8] P } { rd_mem_reg[1] P } } \
+-to { { inst_mem_reg[8] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_mem_reg[9] P } { rd_mem_reg[2] P } } \
+-to { { inst_mem_reg[9] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_mem_reg[10] P } { rd_mem_reg[3] P } } \
+-to { { inst_mem_reg[10] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_mem_reg[11] P } { rd_mem_reg[4] P } } \
+-to { { inst_mem_reg[11] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_wb_reg[7] P } { rd_wb_reg[0] P } } \
+-to { { inst_wb_reg[7] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_wb_reg[8] P } { rd_wb_reg[1] P } } \
+-to { { inst_wb_reg[8] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_wb_reg[9] P } { rd_wb_reg[2] P } } \
+-to { { inst_wb_reg[9] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_wb_reg[10] P } { rd_wb_reg[3] P } } \
+-to { { inst_wb_reg[10] } }
+
+ovf_seq_merge \
+-module { Ci9 } \
+-from { { inst_wb_reg[11] P } { rd_wb_reg[4] P } } \
+-to { { inst_wb_reg[11] } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 65 } \
+-input { 2 add_623_76.A } \
+-output { 2 O1 } \
+-from { \
+   { 2 add_623_76 : UADD { { add_623_76.A } { 'b1 ZERO 2 } } } \
+   { O1 = { add_623_76.1 } } } \
+-to { \
+   { 2 inc_add_623_76_1 : UINC { { add_623_76.A } { 'b1 ZERO 2 } } } \
+   { O1 = { inc_add_623_76_1.1 } } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 66 } \
+-input { 64 add_643_40.A } \
+-output { 64 O1 } \
+-from { \
+   { 64 add_643_40 : UADD { { add_643_40.A } { 'b1 ZERO 64 } } } \
+   { O1 = { add_643_40.1 } } } \
+-to { \
+   { 64 inc_add_643_40_2 : UINC { { add_643_40.A } { 'b1 ZERO 64 } } } \
+   { O1 = { inc_add_643_40_2.1 } } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 67 } \
+-input { 64 add_645_56.A } \
+-output { 64 O1 } \
+-from { \
+   { 64 add_645_56 : UADD { { add_645_56.A } { 'b1 ZERO 64 } } } \
+   { O1 = { add_645_56.1 } } } \
+-to { \
+   { 64 inc_add_645_56_3 : UINC { { add_645_56.A } { 'b1 ZERO 64 } } } \
+   { O1 = { inc_add_645_56_3.1 } } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 68 } \
+-input { 64 add_647_54.A } \
+-output { 64 O1 } \
+-from { \
+   { 64 add_647_54 : UADD { { add_647_54.A } { 'b1 ZERO 64 } } } \
+   { O1 = { add_647_54.1 } } } \
+-to { \
+   { 64 inc_add_647_54_4 : UINC { { add_647_54.A } { 'b1 ZERO 64 } } } \
+   { O1 = { inc_add_647_54_4.1 } } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 69 } \
+-input { 64 add_649_56.A } \
+-output { 64 O1 } \
+-from { \
+   { 64 add_649_56 : UADD { { add_649_56.A } { 'b1 ZERO 64 } } } \
+   { O1 = { add_649_56.1 } } } \
+-to { \
+   { 64 inc_add_649_56_5 : UINC { { add_649_56.A } { 'b1 ZERO 64 } } } \
+   { O1 = { inc_add_649_56_5.1 } } }
+
+ovf_transform \
+-module { Ci9 } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 70 } \
+-input { 2 sub_627_76.A } \
+-output { 2 O1 } \
+-from { \
+   { 2 sub_627_76 : USUB { { sub_627_76.A } { 'b1 ZERO 2 } } } \
+   { O1 = { sub_627_76.1 } } } \
+-to { \
+   { 2 dec_sub_627_76_6 : UDEC { { sub_627_76.A } { 'b1 ZERO 2 } } } \
+   { O1 = { dec_sub_627_76_6.1 } } }
+

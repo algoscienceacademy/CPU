@@ -1,0 +1,62 @@
+# PPCMD 1 
+# sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { metal1 metal10 } -blockPinTarget { nearestRingStripe nearestTarget } -padPinPortConnect { allPort oneGeom } -stripeSCpinTarget { blockring padring ring stripe ringpin blockpin } -checkAlignedSecondaryPin 1 -blockPin useLef -allowJogging 1 -crossoverViaBottomLayer metal1 -allowLayerChange 1 -targetViaTopLayer metal10 -crossoverViaTopLayer metal10 -targetViaBottomLayer metal1 -nets { GND VDD }
+# 3 
+# 16 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 1 
+
+# PPCMD 2 
+# addStripe -block_ring_top_layer_limit metal3 -max_same_layer_jog_length 1.6 -padcore_ring_bottom_layer_limit metal1 -number_of_sets 8 -stacked_via_top_layer metal10 -padcore_ring_top_layer_limit metal3 -spacing 3 -merge_stripes_value 0.095 -layer metal2 -block_ring_bottom_layer_limit metal1 -width 3 -nets {GND VDD} -stacked_via_bottom_layer metal1
+# 2 
+# 2 
+# 1 
+# 0 
+# 0 
+# 2 
+# BOX_LIST 
+# 5020 5100 534835 529200 0 
+# 35020 35100 504835 499200 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 6000 2 0 72040 502970 60275 0 0 
+# GND 6000 2 0 60040 502970 60275 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 2 
+
+# PPCMD 3 
+# addRing -spacing_bottom 5 -width_left 10 -width_bottom 10 -width_top 10 -spacing_top 5 -layer_bottom metal1 -center 1 -stacked_via_top_layer metal10 -width_right 10 -around core -jog_distance 0.095 -offset_bottom 0.095 -layer_top metal1 -threshold 0.095 -offset_left 0.095 -spacing_right 5 -spacing_left 5 -offset_right 0.095 -offset_top 0.095 -layer_right metal2 -nets {GND VDD} -stacked_via_bottom_layer metal1 -layer_left metal2
+# 1 
+# 32 
+# 1 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 20000 1 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 279927 15100 279927 539200 
+# END_RING_PT_INFO_LIST 
+# VDD 20000 2 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 15020 277150 544835 277150 
+# END_RING_PT_INFO_LIST 
+# GND 20000 1 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 279927 45100 279927 509200 
+# END_RING_PT_INFO_LIST 
+# GND 20000 2 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 45020 277150 514835 277150 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 3 
+
